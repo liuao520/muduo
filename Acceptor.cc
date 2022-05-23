@@ -42,7 +42,9 @@ void Acceptor::listen()
     listenning_ = true;
     acceptSocket_.listen(); // listen
     acceptChannel_.enableReading(); // 注册到poller中 acceptChannel_ => Poller
-    //然后如果有事件发生,chanel会调用实现注册的setReadCallback
+    //然后如果有事件发生,chanel会调用实现注册的setReadCallback 执行 handleRead
+    //然后拿到新用户连接的fd和客户端连接的端口,直接执行回调函数
+    //回调 newConnectionCallback_里面就是轮训找到sublopp 唤醒和分发新的channel
 }
 
 // listenfd有事件发生了，就是有新用户连接了
