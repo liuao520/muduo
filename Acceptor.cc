@@ -19,13 +19,13 @@ static int createNonblocking()
 
 Acceptor::Acceptor(EventLoop *loop, const InetAddress &listenAddr, bool reuseport)
     : loop_(loop)
-    , acceptSocket_(createNonblocking()) // socket
+    , acceptSocket_(createNonblocking()) //创建 socket
     , acceptChannel_(loop, acceptSocket_.fd())
     , listenning_(false)
 {
     acceptSocket_.setReuseAddr(true);
     acceptSocket_.setReusePort(true);
-    acceptSocket_.bindAddress(listenAddr); // bind
+    acceptSocket_.bindAddress(listenAddr); // 绑定 bind socket
     // TcpServer::start() Acceptor.listen  有新用户的连接，要执行一个回调（connfd=》channel=》subloop）
     // baseLoop => acceptChannel_(listenfd) => 
     acceptChannel_.setReadCallback(std::bind(&Acceptor::handleRead, this));
@@ -41,7 +41,8 @@ void Acceptor::listen()
 {
     listenning_ = true;
     acceptSocket_.listen(); // listen
-    acceptChannel_.enableReading(); // acceptChannel_ => Poller
+    acceptChannel_.enableReading(); // 注册到poller中 acceptChannel_ => Poller
+    //然后如果有事件发生,chanel会调用实现注册的setReadCallback
 }
 
 // listenfd有事件发生了，就是有新用户连接了
@@ -49,7 +50,7 @@ void Acceptor::handleRead()
 {
     InetAddress peerAddr;
     int connfd = acceptSocket_.accept(&peerAddr);
-    if (connfd >= 0)
+    if (connfd >= 0)//执行回调
     {
         if (newConnectionCallback_)
         {
