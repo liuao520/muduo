@@ -1,0 +1,24 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/hider/study_muduo/mymuduo'
+/usr/bin/cmake -S/home/hider/study_muduo/mymuduo -B/home/hider/study_muduo/mymuduo --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/hider/study_muduo/mymuduo/CMakeFiles /home/hider/study_muduo/mymuduo/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/home/hider/study_muduo/mymuduo'
+make -f CMakeFiles/mymuduo.dir/build.make CMakeFiles/mymuduo.dir/depend
+make[2]: Entering directory '/home/hider/study_muduo/mymuduo'
+cd /home/hider/study_muduo/mymuduo && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/hider/study_muduo/mymuduo /home/hider/study_muduo/mymuduo /home/hider/study_muduo/mymuduo /home/hider/study_muduo/mymuduo /home/hider/study_muduo/mymuduo/CMakeFiles/mymuduo.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/home/hider/study_muduo/mymuduo'
+make -f CMakeFiles/mymuduo.dir/build.make CMakeFiles/mymuduo.dir/build
+make[2]: Entering directory '/home/hider/study_muduo/mymuduo'
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=1 "Building CXX object CMakeFiles/mymuduo.dir/Logger.o"
+/usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/Logger.o -c /home/hider/study_muduo/mymuduo/Logger.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=2 "Building CXX object CMakeFiles/mymuduo.dir/Timestamp.o"
+/usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/Timestamp.o -c /home/hider/study_muduo/mymuduo/Timestamp.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --bold --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=3 "Linking CXX shared library lib/libmymuduo.so"
+/usr/bin/cmake -E cmake_link_script CMakeFiles/mymuduo.dir/link.txt --verbose=
+make[2]: Leaving directory '/home/hider/study_muduo/mymuduo'
+/usr/bin/cmake -E cmake_echo_color --switch= --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=1,2,3 "Built target mymuduo"
+make[1]: Leaving directory '/home/hider/study_muduo/mymuduo'
+/usr/bin/cmake -E cmake_progress_start /home/hider/study_muduo/mymuduo/CMakeFiles 0
+make: Leaving directory '/home/hider/study_muduo/mymuduo'
+ 
