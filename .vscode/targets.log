@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 24 17:44:35 2022
+# Make data base, printed on Tue May 24 23:16:51 2022
 
 # Variables
 
@@ -15,7 +15,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
 # default
 .SHELLFLAGS := -c
 # environment
@@ -33,9 +33,9 @@ SHELL = /bin/sh
 # makefile (from 'Makefile', line 45)
 RM = /usr/bin/cmake -E remove -f
 # environment
-VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"42e84e0914b17800d483f69e299e1b00.zh-cn","_translationsConfigFile":"/home/hider/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/tcf.json","_cacheRoot":"/home/hider/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn","_resolvedLanguagePackCoreLocation":"/home/hider/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/da15b6fd3ef856477bf6f4fb29ba1b7af717770d","_corruptedFile":"/home/hider/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"42e84e0914b17800d483f69e299e1b00.zh-cn","_translationsConfigFile":"/home/hider/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/tcf.json","_cacheRoot":"/home/hider/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn","_resolvedLanguagePackCoreLocation":"/home/hider/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/hider/.vscode-server/data/clp/42e84e0914b17800d483f69e299e1b00.zh-cn/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /home/hider/.vscode-server/bin/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/node
+_ = /home/hider/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/node
 # makefile (from 'Makefile', line 54)
 CMAKE_BINARY_DIR = /home/hider/study_muduo/mymuduo
 # makefile (from 'Makefile', line 1)
@@ -53,11 +53,13 @@ VSCODE_CWD = /mnt/c/Users/hider/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/hider/.vscode-server/bin/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/MiKTeX 2.9/miktex/bin:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Bandizip/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/dotnet/:/mnt/c/cmake/bin:/mnt/c/CTEX/UserData/miktex/bin:/mnt/c/CTEX/MiKTeX/miktex/bin:/mnt/c/CTEX/CTeX/ctex/bin:/mnt/c/CTEX/CTeX/cct/bin:/mnt/c/CTEX/CTeX/ty/bin:/mnt/c/CTEX/Ghostscript/gs9.05/bin:/mnt/c/CTEX/GSview/gsview:/mnt/c/CTEX/WinEdt:/mnt/c/Users/hider/Anaconda3:/mnt/c/Users/hider/Anaconda3/Library/mingw-w64/bin:/mnt/c/Users/hider/Anaconda3/Library/bin:/mnt/c/Users/hider/Anaconda3/Scripts:/mnt/c/Go/bin:/mnt/c/Program Files/TortoiseGit/bin:/mnt/c/Users/hider/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hider/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/hider_code/ffmpeg/bin:/mnt/c/Users/hider/.dotnet/tools:/mnt/c/Users/hider/go/bin:/snap/bin
+PATH = /home/hider/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/MiKTeX 2.9/miktex/bin:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Bandizip/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/dotnet/:/mnt/c/cmake/bin:/mnt/c/CTEX/UserData/miktex/bin:/mnt/c/CTEX/MiKTeX/miktex/bin:/mnt/c/CTEX/CTeX/ctex/bin:/mnt/c/CTEX/CTeX/cct/bin:/mnt/c/CTEX/CTeX/ty/bin:/mnt/c/CTEX/Ghostscript/gs9.05/bin:/mnt/c/CTEX/GSview/gsview:/mnt/c/CTEX/WinEdt:/mnt/c/Users/hider/Anaconda3:/mnt/c/Users/hider/Anaconda3/Library/mingw-w64/bin:/mnt/c/Users/hider/Anaconda3/Library/bin:/mnt/c/Users/hider/Anaconda3/Scripts:/mnt/c/Go/bin:/mnt/c/Program Files/TortoiseGit/bin:/mnt/c/Users/hider/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hider/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/hider_code/ffmpeg/bin:/mnt/c/Users/hider/.dotnet/tools:/mnt/c/Users/hider/go/bin:/snap/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-7a5101fd-8407-45d8-8768-ea7974df6a42.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-2125c0f0-c201-4e61-81e0-4a57e93879f1.sock
+# environment
+VSCODE_SERVER_TAR = /mnt/c/Users/hider/AppData/Local/Temp/vscode-remote-wsl/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/vscode-server-stable-linux-x64.tar.gz
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -71,7 +73,7 @@ PWD = /home/hider/study_muduo/mymuduo
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/6374_interop
+WSL_INTEROP = /run/WSL/8_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -154,8 +156,6 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
 # Load=73/1024=7%, Rehash=0, Collisions=6/107=6%
 
@@ -278,7 +278,6 @@ TcpServer.s:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 258):
 	$(MAKE) -f CMakeFiles/mymuduo.dir/build.make CMakeFiles/mymuduo.dir/TcpServer.s
- 
 
 EventLoop.s:
 #  Phony target (prerequisite of .PHONY).
@@ -582,7 +581,6 @@ Poller.i:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 238):
 	$(MAKE) -f CMakeFiles/mymuduo.dir/build.make CMakeFiles/mymuduo.dir/Poller.i
 
@@ -675,12 +673,12 @@ rebuild_cache:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 104 / storage = 1296 B / avg = 12 B
-# current buf: size = 8162 B / used = 1296 B / count = 104 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 105 / storage = 1302 B / avg = 12 B
+# current buf: size = 8162 B / used = 1302 B / count = 105 / avg = 12 B
 
 # strcache performance: lookups = 319 / hit rate = 67%
 # hash-table stats:
-# Load=104/8192=1%, Rehash=0, Collisions=2/319=1%
-# Finished Make data base on Tue May 24 17:44:35 2022
+# Load=105/8192=1%, Rehash=0, Collisions=2/319=1%
+# Finished Make data base on Tue May 24 23:16:51 2022
 
  
