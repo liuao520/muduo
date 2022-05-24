@@ -18,7 +18,9 @@ Channel::~Channel()
 {
 }
 
-// channel的tie方法什么时候调用过？一个TcpConnection新连接创建的时候 TcpConnection => Channel 
+// channel的tie方法什么时候调用过？
+//一个TcpConnection新连接创建的时候 TcpConnection => Channel 
+//一个链接底层绑定一个channel,channel有一个弱智能指针指向对应的tcpConnection的对象,防止意外remove了channel上层的connection
 void Channel::tie(const std::shared_ptr<void> &obj)
 {
     tie_ = obj;

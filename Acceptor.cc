@@ -52,11 +52,14 @@ void Acceptor::listen()
 void Acceptor::handleRead()
 {
     InetAddress peerAddr;
+    //acceptChannel_.setReadCallback 调用handeread返回的  一个和和客户端通信的fd/
+    //通过ConnectionCallbac->tcpconnection通信
     int connfd = acceptSocket_.accept(&peerAddr);
     if (connfd >= 0)//执行回调
     {
         if (newConnectionCallback_)
         {   //TcpServer设置 callback 通过setnewConnectionCallback调用
+            //这个回调就是tcpsever给accept的->newconnection
             newConnectionCallback_(connfd, peerAddr); // 轮询找到subLoop，唤醒，分发当前的新客户端的Channel
         }
         else

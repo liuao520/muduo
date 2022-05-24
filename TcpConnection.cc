@@ -62,7 +62,7 @@ TcpConnection::~TcpConnection()
         name_.c_str(), channel_->fd(), (int)state_);
 }
 
-void TcpConnection::send(const std::string &buf)
+void TcpConnection::send(const std::string &buf)//给客户端返回
 {
     if (state_ == kConnected)
     {
@@ -71,7 +71,7 @@ void TcpConnection::send(const std::string &buf)
             sendInLoop(buf.c_str(), buf.size());
         }
         else
-        {
+        {//执行回调
             loop_->runInLoop(std::bind(
                 &TcpConnection::sendInLoop,
                 this,
@@ -87,8 +87,8 @@ void TcpConnection::send(const std::string &buf)
  */ 
 void TcpConnection::sendInLoop(const void* data, size_t len)
 {
-    ssize_t nwrote = 0;
-    size_t remaining = len;
+    ssize_t nwrote = 0;//write
+    size_t remaining = len;//没发送完的数据
     bool faultError = false;
 
     // 之前调用过该connection的shutdown，不能再进行发送了
@@ -134,7 +134,7 @@ void TcpConnection::sendInLoop(const void* data, size_t len)
     {
         // 目前发送缓冲区剩余的待发送数据的长度
         size_t oldLen = outputBuffer_.readableBytes();
-        if (oldLen + remaining >= highWaterMark_
+        if (oldLen + remaining >= highWaterMark_//未发送和剩余
             && oldLen < highWaterMark_
             && highWaterMarkCallback_)
         {
@@ -142,10 +142,13 @@ void TcpConnection::sendInLoop(const void* data, size_t len)
                 std::bind(highWaterMarkCallback_, shared_from_this(), oldLen+remaining)
             );
         }
-        outputBuffer_.append((char*)data + nwrote, remaining);
+        outputBuffer_.append((char*)data + nwrote, remaining);//添加到缓冲区之中
         if (!channel_->isWriting())
         {
-            channel_->enableWriting(); // 这里一定要注册channel的写事件，否则poller不会给channel通知epollout
+            // 这里一定要注册channel的写事件，否则poller不会给channel通知epollout
+            //就不能驱动channel调用其readcallback, 就没办法调用TcpConnection::handleWrite,把发送缓冲区中的数据全部发送完成
+            //这个和acceptor只注册read事件是相似的  都是必须
+            channel_->enableWriting(); 
         }
     }
 }

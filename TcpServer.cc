@@ -71,7 +71,7 @@ void TcpServer::setThreadNum(int numThreads)
 // 开启服务器监听   loop.loop()
 void TcpServer::start()
 {
-    if (started_++ == 0) // 防止一个TcpServer对象被start多次
+    if (started_++ == 0) //原子的变量 在一个线程里面只能只能去调用一次tcp::server的strat 防止一个TcpServer对象被start多次
     {
         threadPool_->start(threadInitCallback_); // 启动底层的loop线程池
         loop_->runInLoop(std::bind(&Acceptor::listen, acceptor_.get()));
@@ -120,6 +120,8 @@ void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr)
     );
 
     // 直接调用TcpConnection::connectEstablished
+    //也就是说 现在只要有一个客户端连接 就会生成相应的tcpconnection 并直接调用connectEstablished方法
+    //接下去就是setsatae 然后tie和enablereading(向pollor注册channel的epollin事件),监听channel上的事件和执行回调
     ioLoop->runInLoop(std::bind(&TcpConnection::connectEstablished, conn));
 }
 
@@ -141,3 +143,7 @@ void TcpServer::removeConnectionInLoop(const TcpConnectionPtr &conn)
         std::bind(&TcpConnection::connectDestroyed, conn)
     );
 }
+/*
+删除:
+首先由poller => channel::closeCallback => TcpConnection::handleClose(预注)=>tcpserver::removeConnectionInLoop=>tcpconnection::connectDestroyed
+*/
