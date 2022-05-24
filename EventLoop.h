@@ -29,7 +29,7 @@ public:
 
     Timestamp pollReturnTime() const { return pollReturnTime_; }
     
-    // 在当前loop中执行cb
+    // 在当前loop中执行cb   有一个ioLOop去选择执行哪个
     void runInLoop(Functor cb);
     // 把cb放入队列中，唤醒loop所在的线程，执行cb
     void queueInLoop(Functor cb);

@@ -51,7 +51,8 @@ EventLoop* EventLoopThreadPool::getNextLoop()
             next_ = 0;
         }
     }
-
+    //返回loop本身
+    //不管是新用户的连接事件还是已连接用户的读写事件都是在mainloop中处理的
     return loop;
 }
 
@@ -63,6 +64,6 @@ std::vector<EventLoop*> EventLoopThreadPool::getAllLoops()
     }
     else
     {
-        loops_;
+        return loops_;
     }
 }

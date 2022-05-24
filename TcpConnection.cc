@@ -199,14 +199,14 @@ void TcpConnection::handleRead(Timestamp receiveTime)
     ssize_t n = inputBuffer_.readFd(channel_->fd(), &savedErrno);
     if (n > 0)
     {
-        // 已建立连接的用户，有可读事件发生了，调用用户传入的回调操作onMessage
+        // 已建立连接的用户，有可读事件发生了，调用用户传入的回调操作onMessage 
         messageCallback_(shared_from_this(), &inputBuffer_, receiveTime);
     }
-    else if (n == 0)
+    else if (n == 0)//断开连接
     {
         handleClose();
     }
-    else
+    else//出错
     {
         errno = savedErrno;
         LOG_ERROR("TcpConnection::handleRead");
@@ -222,18 +222,18 @@ void TcpConnection::handleWrite()
         ssize_t n = outputBuffer_.writeFd(channel_->fd(), &savedErrno);
         if (n > 0)
         {
-            outputBuffer_.retrieve(n);
-            if (outputBuffer_.readableBytes() == 0)
+            outputBuffer_.retrieve(n);// onMessage string <- Buffer
+            if (outputBuffer_.readableBytes() == 0)//发送完成
             {
                 channel_->disableWriting();
                 if (writeCompleteCallback_)
                 {
-                    // 唤醒loop_对应的thread线程，执行回调
-                    loop_->queueInLoop(
+                    // 唤醒唤醒唤醒唤醒loop_对应的thread线程，执行回调
+                    loop_->queueInLoop(//这个loop就在tcp connet所在的线程
                         std::bind(writeCompleteCallback_, shared_from_this())
                     );
                 }
-                if (state_ == kDisconnecting)
+                if (state_ == kDisconnecting)//正在关闭!!!
                 {
                     shutdownInLoop();
                 }

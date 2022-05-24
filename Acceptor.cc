@@ -15,6 +15,7 @@ static int createNonblocking()
     {
         LOG_FATAL("%s:%s:%d listen socket create err:%d \n", __FILE__, __FUNCTION__, __LINE__, errno);
     }
+    return sockfd;
 }
 
 Acceptor::Acceptor(EventLoop *loop, const InetAddress &listenAddr, bool reuseport)
@@ -55,7 +56,7 @@ void Acceptor::handleRead()
     if (connfd >= 0)//执行回调
     {
         if (newConnectionCallback_)
-        {
+        {   //TcpServer设置 callback 通过setnewConnectionCallback调用
             newConnectionCallback_(connfd, peerAddr); // 轮询找到subLoop，唤醒，分发当前的新客户端的Channel
         }
         else

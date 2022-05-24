@@ -9,15 +9,34 @@ make[2]: Entering directory '/home/hider/study_muduo/mymuduo'
 cd /home/hider/study_muduo/mymuduo && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/hider/study_muduo/mymuduo /home/hider/study_muduo/mymuduo /home/hider/study_muduo/mymuduo /home/hider/study_muduo/mymuduo /home/hider/study_muduo/mymuduo/CMakeFiles/mymuduo.dir/DependInfo.cmake --color=
 make[2]: Leaving directory '/home/hider/study_muduo/mymuduo'
 make -f CMakeFiles/mymuduo.dir/build.make CMakeFiles/mymuduo.dir/build
+ 
 make[2]: Entering directory '/home/hider/study_muduo/mymuduo'
-/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=1 "Building CXX object CMakeFiles/mymuduo.dir/Logger.o"
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=1 "Building CXX object CMakeFiles/mymuduo.dir/Channel.o"
+/usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/Channel.o -c /home/hider/study_muduo/mymuduo/Channel.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=2 "Building CXX object CMakeFiles/mymuduo.dir/CurrentThread.o"
+/usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/CurrentThread.o -c /home/hider/study_muduo/mymuduo/CurrentThread.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=3 "Building CXX object CMakeFiles/mymuduo.dir/DefaultPoller.o"
+/usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/DefaultPoller.o -c /home/hider/study_muduo/mymuduo/DefaultPoller.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=4 "Building CXX object CMakeFiles/mymuduo.dir/EPollPoller.o"
+/usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/EPollPoller.o -c /home/hider/study_muduo/mymuduo/EPollPoller.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=5 "Building CXX object CMakeFiles/mymuduo.dir/EventLoop.o"
+/usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/EventLoop.o -c /home/hider/study_muduo/mymuduo/EventLoop.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=6 "Building CXX object CMakeFiles/mymuduo.dir/InetAddress.o"
+/usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/InetAddress.o -c /home/hider/study_muduo/mymuduo/InetAddress.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=7 "Building CXX object CMakeFiles/mymuduo.dir/Logger.o"
 /usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/Logger.o -c /home/hider/study_muduo/mymuduo/Logger.cc
-/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=2 "Building CXX object CMakeFiles/mymuduo.dir/Timestamp.o"
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=8 "Building CXX object CMakeFiles/mymuduo.dir/Poller.o"
+/usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/Poller.o -c /home/hider/study_muduo/mymuduo/Poller.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=9 "Building CXX object CMakeFiles/mymuduo.dir/TcpServer.o"
+/usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/TcpServer.o -c /home/hider/study_muduo/mymuduo/TcpServer.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=10 "Building CXX object CMakeFiles/mymuduo.dir/Thread.o"
+/usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/Thread.o -c /home/hider/study_muduo/mymuduo/Thread.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=11 "Building CXX object CMakeFiles/mymuduo.dir/Timestamp.o"
 /usr/bin/c++  -Dmymuduo_EXPORTS  -g -std=c++11 -fPIC -fPIC   -o CMakeFiles/mymuduo.dir/Timestamp.o -c /home/hider/study_muduo/mymuduo/Timestamp.cc
-/usr/bin/cmake -E cmake_echo_color --switch= --green --bold --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=3 "Linking CXX shared library lib/libmymuduo.so"
+/usr/bin/cmake -E cmake_echo_color --switch= --green --bold --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=12 "Linking CXX shared library lib/libmymuduo.so"
 /usr/bin/cmake -E cmake_link_script CMakeFiles/mymuduo.dir/link.txt --verbose=
 make[2]: Leaving directory '/home/hider/study_muduo/mymuduo'
-/usr/bin/cmake -E cmake_echo_color --switch= --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=1,2,3 "Built target mymuduo"
+/usr/bin/cmake -E cmake_echo_color --switch= --progress-dir=/home/hider/study_muduo/mymuduo/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target mymuduo"
 make[1]: Leaving directory '/home/hider/study_muduo/mymuduo'
 /usr/bin/cmake -E cmake_progress_start /home/hider/study_muduo/mymuduo/CMakeFiles 0
 make: Leaving directory '/home/hider/study_muduo/mymuduo'

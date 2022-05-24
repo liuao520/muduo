@@ -14,6 +14,20 @@ static EventLoop* CheckLoopNotNull(EventLoop *loop)
     return loop;
 }
 
+/*
+实现tcpserver的构造时创建acceptor的过程:
+1.首先创建listenFd,然后封装成acceptChannel
+2.然后通过acceptChannel_.enableReading,往pollor里面注册一个读事件,并吧这个listenFd加入pollor
+3.pollor开始监听(最终要调用loop), pollor监听acceptChannel上的事件
+4.然后pollor执行一个读事件上的回调 Acceptor::handleRead
+5:handleRead 通过accept返回一个和客户端通信的connfd
+6.!!!!然后执行相关回调,
+///这个回调就是TCPSever对象通过setNewConnectionCallback预先注册的newConnectionCallback的回调函数
+也就是TCPserver中的TcpServer::newConnection
+newConnection(封装tcpconnection对象):里面注册的和返回的就一个loop:ioLoop 轮询选择一个subLoop，来管理channe
+吧从accept上读出来的ConnectionFd打包成最终班的connection注册的相应subloop上
+*/
+
 TcpServer::TcpServer(EventLoop *loop,
                 const InetAddress &listenAddr,
                 const std::string &nameArg,
@@ -64,7 +78,7 @@ void TcpServer::start()
     }
 }
 
-// 有一个新的客户端的连接，acceptor会执行这个回调操作
+///////////有一个新的客户端的连接，acceptor会执行这个回调操作
 void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr)
 {
     // 轮询算法，选择一个subLoop，来管理channel

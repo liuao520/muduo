@@ -72,25 +72,26 @@ private:
     void sendInLoop(const void* message, size_t len);
     void shutdownInLoop();
 
-    EventLoop *loop_; // 这里绝对不是baseLoop， 因为TcpConnection都是在subLoop里面管理的
+     // 这里绝对不是baseLoop， 因为TcpConnection都是在subLoop里面管理的
+    EventLoop *loop_;
     const std::string name_;
     std::atomic_int state_;
     bool reading_;
-
+     //acceptor描述在mainlopp监听新用户链接 connect是已连接用户的读写事件
     // 这里和Acceptor类似   Acceptor=》mainLoop    TcpConenction=》subLoop
     std::unique_ptr<Socket> socket_;
     std::unique_ptr<Channel> channel_;
 
-    const InetAddress localAddr_;
-    const InetAddress peerAddr_;
-
+    const InetAddress localAddr_;//本地
+    const InetAddress peerAddr_;//客户端
+    //回调
     ConnectionCallback connectionCallback_; // 有新连接时的回调
     MessageCallback messageCallback_; // 有读写消息时的回调
     WriteCompleteCallback writeCompleteCallback_; // 消息发送完成以后的回调
-    HighWaterMarkCallback highWaterMarkCallback_;
+    HighWaterMarkCallback highWaterMarkCallback_;//水平控制回调
     CloseCallback closeCallback_;
     size_t highWaterMark_;
-
+    //huanchong
     Buffer inputBuffer_;  // 接收数据的缓冲区
     Buffer outputBuffer_; // 发送数据的缓冲区
 };
