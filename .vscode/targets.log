@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed May 25 11:24:46 2022
+# Make data base, printed on Wed May 25 12:15:50 2022
 
 # Variables
 
@@ -53,7 +55,7 @@ PATH = /home/hider/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/b
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-c4c7747f-8684-4d72-8ab4-af6a25c44acf.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-26443af2-12b5-4b2a-abb2-d6c3264928ea.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -67,7 +69,7 @@ PWD = /home/hider/study_muduo/mymuduo
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/6732_interop
+WSL_INTEROP = /run/WSL/719_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -153,9 +155,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2064, inode 79022): 45 files, no impossibilities.
+# . (device 2064, inode 79022): 46 files, no impossibilities.
 
-# 45 files, no impossibilities in 1 directories.
+# 46 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -205,14 +207,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 53 / storage = 626 B / avg = 11 B
-# current buf: size = 8162 B / used = 626 B / count = 53 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 54 / storage = 634 B / avg = 11 B
+# current buf: size = 8162 B / used = 634 B / count = 54 / avg = 11 B
 
-# strcache performance: lookups = 56 / hit rate = 5%
+# strcache performance: lookups = 57 / hit rate = 5%
 # hash-table stats:
-# Load=53/8192=1%, Rehash=0, Collisions=1/56=2%
-# Finished Make data base on Wed May 25 11:24:46 2022
+# Load=54/8192=1%, Rehash=0, Collisions=1/57=2%
+# Finished Make data base on Wed May 25 12:15:50 2022
 
  
-make: *** No rule to make target 'all'.  Stop.
-
