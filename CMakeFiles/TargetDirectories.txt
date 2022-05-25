@@ -1,3 +1,0 @@
-/home/hider/study_muduo/mymuduo/CMakeFiles/rebuild_cache.dir
-/home/hider/study_muduo/mymuduo/CMakeFiles/edit_cache.dir
-/home/hider/study_muduo/mymuduo/CMakeFiles/mymuduo.dir
